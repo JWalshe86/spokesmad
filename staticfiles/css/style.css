@@ -1,0 +1,184 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header Styles */
+header {
+    background: #f4a460; /* Sandy brown background */
+    color: white;
+    padding: 1rem;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 1rem;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+/* Hero Section */
+.hero {
+    background-image: url("/static/images/cycling-hero.jpg"); /* Ensure the correct path */
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    padding: 4rem 2rem;
+}
+
+.hero h2 {
+    font-size: 3rem;
+    margin: 0;
+}
+
+.hero p {
+    font-size: 1.25rem;
+}
+
+.hero a {
+    background: #fff;
+    color: #333;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+/* Featured Posts Section */
+.featured-posts {
+    text-align: center;
+    padding: 2rem;
+}
+
+.featured-posts h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.featured-posts p {
+    font-size: 1.2rem;
+}
+
+.featured-posts a {
+    background: #f4a460; /* Sandy brown background */
+    color: white;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+/* Post List Section */
+.post-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 2rem;
+}
+
+.post-item {
+    flex: 1 1 calc(33.333% - 2rem);
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    text-align: center;
+    background: #fff;
+    padding: 1rem;
+}
+
+.post-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.post-item h3 {
+    margin: 0.5rem 0;
+}
+
+.post-item a {
+    background: #f4a460; /* Sandy brown background */
+    color: white;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+/* Post Detail Section */
+.post-detail {
+    padding: 2rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.post-detail h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.post-detail .post-image {
+    width: 100%;
+    height: auto;
+    max-height: 300px; /* Half the default height */
+    object-fit: cover; /* Ensure proper aspect ratio */
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+.post-detail .large-text {
+    background-color: #f9f9f9; /* Light background */
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+.post-detail p {
+    line-height: 1.6;
+}
+
+.post-detail .back-link {
+    background: #f4a460; /* Sandy brown background */
+    color: white;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+/* Footer Styles */
+footer {
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+/* Utility Styles */
+.btn-secondary {
+    background-color: #f4a460; /* Sandy brown background */
+    color: white;
+    border: none;
+}
+
+.btn-secondary:hover {
+    background-color: #e3965d; /* Slightly darker sandy brown */
+}
+
