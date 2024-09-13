@@ -1,18 +1,31 @@
-<!-- blog/templates/blog/post_detail.html -->
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ post.title }}</title>
-</head>
-<body>
-    <h1>{{ post.title }}</h1>
-    <p>{{ post.content }}</p>
-    {% if post.image %}
-        <img src="{{ post.image.url }}" alt="{{ post.title }}">
-    {% endif %}
-    <a href="{% url 'post_list' %}">Back to Posts</a>
-</body>
-</html>
+{% extends 'blog/base.html' %}
+{% load static %}
+
+{% block title %}Spokesmad | {{ post.title }}{% endblock %}
+
+{% block content %}
+    <section class="container mt-5">
+        <article class="post-detail">
+            <div class="row">
+                <div class="col-md-8">
+                    <h2 class="mb-4">{{ post.title }}</h2>
+                    {% if post.image %}
+                        <img src="{{ post.image.url }}" alt="{{ post.title }}" class="img-fluid mb-4 post-image">
+                    {% else %}
+                        <img src="{% static 'images/default_image.jpg' %}" alt="Default Image" class="img-fluid mb-4 post-image">
+                    {% endif %}
+                    <div class="large-text mb-4">
+                        <p>{{ post.large_text_field }}</p>
+                    </div>
+                    <p><strong>Location:</strong> {{ post.location }}</p>
+                    <p><strong>Activity:</strong> {{ post.activity }}</p>
+                    <p>{{ post.description }}</p>
+                </div>
+                <div class="col-md-4">
+                    <a href="{% url 'post_list' %}" class="btn btn-secondary btn-block">Back to Posts</a>
+                </div>
+            </div>
+        </article>
+    </section>
+{% endblock %}
 

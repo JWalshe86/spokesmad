@@ -1,90 +1,17 @@
-{% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Spokesmad | Cycling Travel Blog</title>
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-        header {
-            background: #f4a460; /* Sandy brown background */
-            color: white;
-            padding: 1rem;
-            text-align: center;
-        }
-        nav ul {
-            list-style: none;
-            padding: 0;
-        }
-        nav ul li {
-            display: inline;
-            margin: 0 1rem;
-        }
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-        }
-        .hero {
-            background-image: url("{% static 'images/cycling-hero.jpg' %}"); 
-            background-size: cover;
-            background-position: center;
-            color: white;
-            text-align: center;
-            padding: 4rem 2rem;
-        }
-        .hero h2 {
-            font-size: 3rem;
-            margin: 0;
-        }
-        .hero p {
-            font-size: 1.25rem;
-        }
-        .featured-posts {
-            text-align: center;
-            padding: 2rem;
-        }
-        footer {
-            background: #333;
-            color: white;
-            text-align: center;
-            padding: 1rem;
-            position: fixed;
-            width: 100%;
-            bottom: 0;
-        }
-    </style>
-</head>
-<body>
-    <header>
-        <h1>Welcome to Spokesmad</h1>
-        <nav>
-            <ul>
-                <li><a href="{% url 'home' %}">Home</a></li>
-                <li><a href="{% url 'post_list' %}">Blog Posts</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <section class="hero">
-            <h2>Discover the World on Two Wheels</h2>
-            <p>Join us on our cycling adventures and find tips, routes, and inspiration for your next ride.</p>
-            <a href="{% url 'post_list' %}" style="background: #fff; color: #333; padding: 0.5rem 1rem; text-decoration: none; border-radius: 5px;">Explore Now</a>
-        </section>
-        <section class="featured-posts">
-            <h2>Featured Posts</h2>
-            <p>Check out our latest cycling adventures and tips.</p>
-            <a href="{% url 'post_list' %}" style="background: #f4a460; color: white; padding: 0.5rem 1rem; text-decoration: none; border-radius: 5px;">See All Posts</a>
-        </section>
-    </main>
-    <footer>
-        <p>&copy; 2024 Spokesmad. All rights reserved.</p>
-    </footer>
-</body>
-</html>
+{% extends 'blog/base.html' %}
+
+{% block title %}Spokesmad | Home{% endblock %}
+
+{% block content %}
+    <section class="hero">
+        <h2>Discover the World on Two Wheels</h2>
+        <p>Join us on our cycling adventures and find tips, routes, and inspiration for your next ride.</p>
+        <a href="{% url 'post_list' %}">Explore Now</a>
+    </section>
+    <section class="featured-posts">
+        <h2>Featured Posts</h2>
+        <p>Check out our latest cycling adventures and tips.</p>
+        <a href="{% url 'post_list' %}">See All Posts</a>
+    </section>
+{% endblock %}
 

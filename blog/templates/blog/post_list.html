@@ -1,23 +1,28 @@
-<!-- blog/templates/blog/post_list.html -->
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog Posts</title>
-</head>
-<body>
-    <h1>Blog Posts</h1>
-    <ul>
-        {% for post in posts %}
-            <li>
-                <a href="{% url 'post_detail' slug=post.slug %}">{{ post.title }}</a>
-                {% if post.image %}
-                    <img src="{{ post.image.url }}" alt="{{ post.title }}">
-                {% endif %}
-            </li>
-        {% endfor %}
-    </ul>
-</body>
-</html>
+{% extends 'blog/base.html' %}
+{% load static %}
+
+{% block title %}Spokesmad | Blog Posts{% endblock %}
+
+{% block content %}
+    <section class="container post-list">
+        <div class="row">
+            {% for post in posts %}
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    {% if post.image %}
+                        <img src="{{ post.image.url }}" alt="{{ post.title }}" class="card-img-top">
+                    {% else %}
+                        <img src="{% static 'images/default_image.jpg' %}" alt="Default Image" class="card-img-top">
+                    {% endif %}
+                    <div class="card-body">
+                        <h5 class="card-title">{{ post.title }}</h5>
+                        <p class="card-text">{{ post.short_description }}</p>
+                        <a href="{% url 'post_detail' post.slug %}" class="btn btn-primary">Read More</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+{% endblock %}
 
